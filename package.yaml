@@ -1,7 +1,8 @@
-name: purescript
-version: '0.12.0'
+name: purescript0120
+version: "0.12.0"
 synopsis: PureScript Programming Language Compiler
-description: A small strongly, statically typed programming language with expressive
+description:
+  A small strongly, statically typed programming language with expressive
   types, inspired by Haskell and compiling to JavaScript.
 category: Language
 author: >
@@ -136,12 +137,12 @@ executables:
       - warp ==3.*
       - websockets >=0.9 && <0.13
     when:
-    - condition: flag(release)
-      then:
-        cpp-options: -DRELEASE
-      else:
-        dependencies:
-        - gitrev >=1.2.0 && <1.4
+      - condition: flag(release)
+        then:
+          cpp-options: -DRELEASE
+        else:
+          dependencies:
+            - gitrev >=1.2.0 && <1.4
 
 tests:
   tests:
@@ -161,8 +162,8 @@ tests:
 flags:
   release:
     description: >
-        Mark this build as a release build: prevents inclusion of extra
-        info e.g. commit SHA in --version output)
+      Mark this build as a release build: prevents inclusion of extra
+      info e.g. commit SHA in --version output)
     manual: false
     default: false
 
